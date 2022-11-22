@@ -4,6 +4,6 @@ let data = {
 	homeUrl: "https://www.steren.fr/",
 };
 
-data.avatar = `https://steren.fr/face.jpg`;
+data.avatar = `https://steren.fr/img/avatar.webp`;
 
 module.exports = data;
