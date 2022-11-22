@@ -38,6 +38,12 @@ module.exports = async function(data) {
 		<title>${data.metadata.username}’s Twitter Archive${titleTweetNumberStr}</title>
 		<meta name="description" content="A read-only archive of${ data.pagination && data.pagination.hrefs && data.pagination.hrefs.length ? ` all ${data.pagination.hrefs.length}` : ""} of ${data.metadata.username}’s tweets." />
 		
+		<script>
+		if("classList" in document.documentElement) {
+			document.documentElement.classList.add("has-js");
+		}
+		</script>
+
         <link rel="stylesheet" href="/assets/style.css">
 
 		${data.page.fileSlug === "newest" ? `<link rel="canonical" href="/${data.tweet.id_str}/">
