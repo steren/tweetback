@@ -36,22 +36,10 @@ module.exports = async function(data) {
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>${data.metadata.username}’s Twitter Archive${titleTweetNumberStr}</title>
-		<meta name="description" content="A read-only indieweb self-hosted archive of${ data.pagination && data.pagination.hrefs && data.pagination.hrefs.length ? ` all ${data.pagination.hrefs.length}` : ""} of ${data.metadata.username}’s tweets." />
-		<script>
-		if("classList" in document.documentElement) {
-			document.documentElement.classList.add("has-js");
-		}
-		</script>
+		<meta name="description" content="A read-only archive of${ data.pagination && data.pagination.hrefs && data.pagination.hrefs.length ? ` all ${data.pagination.hrefs.length}` : ""} of ${data.metadata.username}’s tweets." />
+		
+        <link rel="stylesheet" href="/assets/style.css">
 
-		${data.page.fileSlug !== "tweet-pages" ? `
-			<link rel="stylesheet" href="/assets/chartist.min.css">
-			<link rel="stylesheet" href="/assets/chart.css">
-			<script src="/assets/chartist.min.js"></script>
-			<script src="/assets/chart.js"></script>
-		` : ""}
-
-		<link rel="stylesheet" href="/assets/style.css">
-		<script src="/assets/script.js"></script>
 		${data.page.fileSlug === "newest" ? `<link rel="canonical" href="/${data.tweet.id_str}/">
 <meta http-equiv="refresh" content="0; url=/${data.tweet.id_str}/">` : ""}
 	</head>
